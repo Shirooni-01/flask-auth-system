@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card dashboard">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h1>
+                Welcome,
+            </h1>
+
+            <h2 class="username">
+                {{ username }}
+            </h2>
+
+            <p class="subtitle">
+                You have successfully logged into your account.
+            </p>
+
+            <div class="info-box">
+
+                <p>
+                    🎉 Congratulations! Your authentication was successful.
+                </p>
+
+                <p>
+                    🔒 Your session is currently active.
+                </p>
+
+            </div>
+
+            <a href="{{ url_for('logout') }}" class="logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

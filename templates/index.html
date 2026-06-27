@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>Login System by King 👑</h1>
+
+            <p class="subtitle">
+                Sign in to continue
+            </p>
+
+            {% if comment %}
+                <div class="message error">
+                    {{ comment }}
+                </div>
+            {% endif %}
+
+            <form action="/" method="POST">
+
+                <div class="input-group">
+                    <label>Username</label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter Username"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Enter Password"
+                        required
+                    >
+
+                </div>
+
+                <div class="show-password">
+
+                    <input
+                        type="checkbox"
+                        id="showPassword"
+                    >
+
+                    <label for="showPassword">
+                        Show Password
+                    </label>
+
+                </div>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="bottom-text">
+
+                Don't have an account?
+
+                <a href="{{ url_for('regeister') }}">
+                    Register
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+<script>
+
+const password = document.getElementById("password");
+const showPassword = document.getElementById("showPassword");
+
+showPassword.addEventListener("change", function(){
+
+    if(showPassword.checked){
+        password.type = "text";
+    }
+    else{
+        password.type = "password";
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>
